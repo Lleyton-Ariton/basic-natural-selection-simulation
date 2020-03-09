@@ -1,0 +1,89 @@
+1578454740
+3 3
+13 libp3showbase 4 il41 14 panda3d.direct 
+9
+10 17 get_particle_path 0 1 0 17 get_particle_path 0 1 1 0
+50
+ConfigVariableSearchPath &get_particle_path(void);
+
+11 15 throw_new_frame 0 1 0 15 throw_new_frame 0 1 2 0
+27
+void throw_new_frame(void);
+
+12 16 init_app_for_gui 0 1 0 16 init_app_for_gui 0 1 3 0
+28
+void init_app_for_gui(void);
+
+13 23 add_fullscreen_testsize 0 1 0 23 add_fullscreen_testsize 0 1 4 61
+// klunky interface since we cant pass array from python->C++
+51
+void add_fullscreen_testsize(int xsize, int ysize);
+
+14 24 runtest_fullscreen_sizes 0 1 0 24 runtest_fullscreen_sizes 0 1 5 0
+51
+void runtest_fullscreen_sizes(GraphicsWindow *win);
+
+15 27 query_fullscreen_testresult 0 1 0 27 query_fullscreen_testresult 0 1 6 0
+55
+bool query_fullscreen_testresult(int xsize, int ysize);
+
+16 33 store_accessibility_shortcut_keys 0 1 0 33 store_accessibility_shortcut_keys 0 1 7 31
+// to handle windows stickykeys
+45
+void store_accessibility_shortcut_keys(void);
+
+17 33 allow_accessibility_shortcut_keys 0 1 0 33 allow_accessibility_shortcut_keys 0 1 8 0
+55
+void allow_accessibility_shortcut_keys(bool allowKeys);
+
+18 24 activate_osx_application 0 1 0 24 activate_osx_application 0 1 9 0
+36
+void activate_osx_application(void);
+
+9
+1 0 0 6 1 19 0 0 0 0 
+2 0 0 4 2 21 0 0 0 0 
+3 0 0 4 3 21 0 0 0 0 
+4 0 0 4 4 21 0 0 61 // klunky interface since we cant pass array from python->C++ 2 5 xsize 1 22  5 ysize 1 22  
+5 0 0 4 5 21 0 0 0 1 3 win 1 23  
+6 0 0 6 6 25 0 0 0 2 5 xsize 1 22  5 ysize 1 22  
+7 0 0 4 7 21 0 0 31 // to handle windows stickykeys 0 
+8 0 0 4 8 21 0 0 0 1 9 allowKeys 1 25  
+9 0 0 4 9 21 0 0 0 0 
+7
+19 26 ConfigVariableSearchPath * 0 8576 26 ConfigVariableSearchPath * 26 ConfigVariableSearchPath * 0 0 20 0 0 0 0 0 0 0 0 0 0
+
+20 24 ConfigVariableSearchPath 0 2048 24 ConfigVariableSearchPath 24 ConfigVariableSearchPath 0 0 0 0 0 0 0 0 0 0 0 0 731
+/**
+ * This is similar to a ConfigVariableList, but it returns its list as a
+ * DSearchPath, as a list of directories.
+ *
+ * You may locally append directories to the end of the search path with the
+ * methods here, or prepend them to the beginning.  Use these methods to make
+ * adjustments to the path; do not attempt to directly modify the const
+ * DSearchPath object returned by get_value().
+ *
+ * Unlike other ConfigVariable types, local changes (made by calling
+ * append_directory() and prepend_directory()) are specific to this particular
+ * instance of the ConfigVariableSearchPath.  A separate instance of the same
+ * variable, created by using the same name to the constructor, will not
+ * reflect the local changes.
+ */
+
+21 4 void 0 8194 4 void 4 void 0 6 0 0 0 0 0 0 0 0 0 0 0
+
+22 3 int 0 8194 3 int 3 int 0 1 0 0 0 0 0 0 0 0 0 0 0
+
+23 16 GraphicsWindow * 0 8576 16 GraphicsWindow * 16 GraphicsWindow * 0 0 24 0 0 0 0 0 0 0 0 0 0
+
+24 14 GraphicsWindow 0 2048 14 GraphicsWindow 14 GraphicsWindow 0 0 0 0 0 0 0 0 0 0 0 0 122
+/**
+ * A window, fullscreen or on a desktop, into which a graphics device sends
+ * its output for interactive display.
+ */
+
+25 4 bool 0 8194 4 bool 4 bool 0 4 0 0 0 0 0 0 0 0 0 0 0
+
+0
+0
+0

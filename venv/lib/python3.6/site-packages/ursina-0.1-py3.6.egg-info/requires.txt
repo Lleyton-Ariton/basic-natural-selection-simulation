@@ -1,0 +1,9 @@
+panda3d
+pillow
+screeninfo
+
+[extras]
+psd-tools
+imageio
+psutil
+hurry.filesize
