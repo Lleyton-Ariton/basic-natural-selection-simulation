@@ -1,2 +1,5 @@
-# basic-natural-selection-simulation
-Basic simulation of the natural selection of genes
+# Basic Natural Selection Simulation
+
+A fun visualization of the natural selection of genes in an environment.
+
+![](./img/screenshot2.png)
