@@ -1,0 +1,2 @@
+ursina >= 0.1
+dataclasses >= 0.7

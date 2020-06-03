@@ -1,16 +1,12 @@
 import random
+import argparse
 
 from ursina import *
 from typing import Any, Tuple, Dict, List
 
-from collections import OrderedDict
-
 WIDTH = 50
 HEIGHT = 50
 TICKER = 0
-
-POPULATION_SIZE = 25
-FOOD_SIZE = round(1.5 * POPULATION_SIZE)
 
 app = Ursina()
 grid = Entity(model=Grid(50, 50), scale=50, color=color.color(0, 0, 0.8, lerp(0.8, 0, 0.2)),
@@ -291,6 +287,25 @@ def update():
 
 
 if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(description='Run natural selection simulation')
+
+    POPULATION_SIZE = 25
+    FOOD_SIZE = round(1.5 * POPULATION_SIZE)
+
+    parser.add_argument('-popsize', '--popsize', type=int,
+                        default=POPULATION_SIZE, help='Number of individuals to create in the population')
+    parser.add_argument('-foodsize', '--foodsize', type=int, default=None,
+                        help='Amount of food to spawn in the environment')
+
+    args = parser.parse_args()
+
+    if args.foodsize is not None:
+        FOOD_SIZE = args.foodsize
+    else:
+        POPULATION_SIZE = args.popsize
+        FOOD_SIZE = round(1.5 * POPULATION_SIZE)
+
     dead = []
     population = []
     for i in range(POPULATION_SIZE):
