@@ -2,7 +2,7 @@
 
 A fun visualization of the natural selection of genes in an environment.
 
-![](./img/screenshot2.png)
+![](./imgs/screenshot2.png)
 
 ## Project
 
